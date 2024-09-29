@@ -1,0 +1,25 @@
+---
+layout: post
+title: "Интересная страница"
+description: "Нажми сюда, чтобы увидеть что-то невероятное!"
+redirect_to: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ page.title }}</title>
+    <meta property="og:title" content="{{ page.title }}">
+    <meta property="og:description" content="{{ page.description }}">
+    <meta http-equiv="refresh" content="3; url={{ page.redirect_to }}">
+</head>
+<body>
+    <h1>Подождите пару секунд...</h1>
+    <script>
+        setTimeout(function(){
+            window.location.href = "{{ page.redirect_to }}";
+        }, 3000);
+    </script>
+</body>
+</html>
